@@ -1,0 +1,513 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from truelysell-html.dreamguystech.com/template/user-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 13:32:17 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Edit-Profile</title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{% static 'users/assets/img/favicon.png' %}">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"> 
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/fontawesome/css/all.min.css' %}">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/css/style.css' %}">
+</head>
+
+<body>
+
+	<div class="main-wrapper">
+	
+		<!-- Header -->
+		<header class="header">
+			<nav class="navbar navbar-expand-lg header-nav">
+				<div class="navbar-header">
+					<a id="mobile_btn" href="javascript:void(0);">
+						<span class="bar-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</a>
+					<a href="#" class="navbar-brand logo">
+						<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+					</a>
+					<a href="#" class="navbar-brand logo-small">
+						<img src="{% static 'users/assets/img/head-logo.png' %}" class="img-fluid" alt="Logo">
+					</a>
+				</div>
+				<div class="main-menu-wrapper">
+					<div class="menu-header">
+						<a href="#" class="menu-logo">
+							<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+						</a>
+						<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
+					</div>
+					<ul class="main-nav">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href= "{% url 'categories' %}" >Categories</a>
+						</li>
+						<li><a href= "{% url 'about-us' %}" >About Us</a></li>
+						
+						<li class="has-submenu active">
+							<a href= "{% url 'customer-dashboard' %}" >My Home</a>
+							<ul class="submenu">
+								<li><a href= "{% url 'customer-dashboard' %}" >Dashboard</a></li>
+								<li><a href= "{% url 'customer-bookings' %}" >Bookings</a></li>
+								<li class="active"><a href= "{% url 'customer-settings' %}" >Profile Settings</a></li>
+								<li><a href= "{% url 'customer-wallet' %}" >Wallet</a></li>
+								<li><a href= "{% url 'customer-reviews' %}" >Reviews</a></li>
+								<li><a href= "{% url 'customer-payment' %}" >Payment</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href= "{% url 'faq' %}" >Faq</a></li>
+								<li><a href="{% url 'term-condition' %}">Terms & Conditions</a></li>
+								<li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+							</ul>
+						</li>
+						<li><a href= "{% url 'contact-us' %}" >Contact Us</a></li>
+						<li><a href="{% url 'search' %}"><b><i class="fas fa-search"></i></a></li>
+					</ul>
+				</div>
+				
+				<ul class="nav header-navbar-rht">
+					<li class="nav-item desc-list wallet-menu">
+						<a href= "{% url 'customer-wallet' %}"  class="nav-link header-login">
+							<img src="{% static 'users/assets/img/wallet.png' %}" alt="" class="mr-2 wallet-img"><span>Wallet:</span> $1875
+						</a>
+					</li>
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown logged-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+							<i class="fas fa-bell"></i> <span class="badge badge-pill bg-yellow">2</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/provider/provider-01.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Thomas Herzberg  has rejected the service</span></p>
+													<p class="noti-time"><span class="notification-time">Today 01:00 AM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/provider/provider-02.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Matthew Garcia have completed the service</span></p>
+													<p class="noti-time"><span class="notification-time">Today 11:07 AM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/provider/provider-03.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Yolanda Potter have inprogress the service</span></p>
+													<p class="noti-time"><span class="notification-time">17 Sep 2020 9:00 PM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/provider/provider-04.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Ricardo Flemings have completed the service</span></p>
+													<p class="noti-time"><span class="notification-time">16 Sep 2020 12:00 PM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/provider/provider-05.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Maritza Wasson have inprogress the service</span></p>
+													<p class="noti-time"><span class="notification-time">15 Sep 2020 5:32 PM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href= "{% url 'notifications' %}" >View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+
+					<!-- chat -->
+					<li class="nav-item logged-item">
+						<a href= "{% url 'chat' %}"  class="nav-link">
+							<i class="fa fa-comments" aria-hidden="true"></i>
+						</a>
+					</li>
+					<!-- /chat -->
+					
+					<li class="nav-item dropdown has-arrow logged-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+							<span class="user-img">
+								<img class="rounded-circle" src="{% static 'users/assets/img/customer/user-01.jpg' %}" alt="">
+							</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img class="avatar-img rounded-circle" src="{% static 'users/assets/img/customer/user-01.jpg' %}" alt="">
+								</div>
+								<div class="user-text">
+									<h6>{{context.uid.username}}</h6>
+									<p class="text-muted mb-0">{{context.uid.role}}</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href= "{% url 'customer-dashboard' %}" >Dashboard</a>
+							<a class="dropdown-item" href= "{% url 'all-services' %}" >Book Services</a>
+							<a class="dropdown-item" href="{% url 'log-out' %}">Logout</a>
+						</div>
+					</li>
+				</ul>
+				
+			</nav>
+		</header>
+		<!-- /Header -->
+		
+		<div class="content">
+			<div class="container">
+				<div class="row"> 
+					<div class="col-xl-3 col-md-4">
+						<div class="mb-4">
+							<div class="d-sm-flex flex-row align-items-center">
+								<div class="col-xl-4">
+								<img alt="profile image" src="{% static 'users/assets/img/customer/user-01.jpg' %}" class="avatar-lg rounded-circle">
+								</div>
+								<div class="col-xl-8">
+									<h6>{{context.cid.name}}</h6>
+									<p>Member Since {{context.uid.created_at}} </p>
+								</div>
+							</div>
+						</div>
+						<div class="widget settings-menu">
+							<ul role="tablist" class="nav nav-tabs">
+								<li class="nav-item current">
+									<a href= "{% url 'customer-dashboard' %}"  class="nav-link ">	<i class="fas fa-chart-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+								<li class="nav-item current">
+									<a href= "{% url 'customer-bookings' %}"  class="nav-link">	<i class="far fa-calendar-check"></i>
+										<span>My Bookings</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'customer-settings' %}"  class="nav-link active">	<i class="far fa-user"></i>
+										<span>Profile Settings</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'customer-wallet' %}"  class="nav-link ">	<i class="far fa-money-bill-alt"></i>
+										<span>Wallet</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'customer-reviews' %}"  class="nav-link ">	<i class="far fa-star"></i>
+										<span>Reviews</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'customer-payment' %}"  class="nav-link ">	<i class="fas fa-hashtag"></i>
+										<span>Payment</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-9 col-md-8">
+						<div class="tab-content pt-0">
+							<div class="tab-pane show active" id="user_profile_settings">
+								<div class="widget">
+									<h4 class="widget-title">Profile Settings</h4>
+										<div class="row">
+											<div class="col-xl-12">
+												<h5 class="form-title">Basic Information</h5>
+											</div>
+											<div class="form-group col-xl-12">
+												<div class="media align-items-center mb-3">
+													<img class="user-image" src="{% static 'users/assets/img/customer/user-01.jpg' %}" alt="">
+													<div class="media-body">
+														<h5 class="mb-0">{{context.uid.username}}</h5>
+														<p>Max file size is 20mb</p>
+														<div class="jstinput">	<a href="javascript:void(0);" class="avatar-view-btn browsephoto openfile">Browse</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<form action="{% url 'update-profile' %}" method="POST"> {% csrf_token %}
+										<div class="row">
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">Name</label>
+												<input class="form-control" type="text" name="name" placeholder="{{context.cid.name}}">
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">Gender</label>
+												<select class="select form-control" name="gender">
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+												</select>
+											</div>
+											<div class="form-group col-xl-12">
+												<label class="mr-sm-2">Email</label>
+												<input class="form-control" type="email" value="{{context.uid.email}}" readonly>
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">Country Code</label>
+												<input class="form-control" type="text" value="91" readonly>
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">Mobile Number</label>
+												<input class="form-control no_only" type="text" value="{{context.uid.mobile}}" name="mobileno" readonly required>
+											</div>
+											<div class="col-xl-12">
+												<h5 class="form-title">Address</h5>
+											</div>
+											<div class="form-group col-xl-12">
+												<label class="mr-sm-2">Address</label>
+												<input type="text" class="form-control" name="address" placeholder="{{context.cid.address}}">
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">Country</label>
+												<input type="text" class="form-control" name="country" placeholder="{{context.cid.country}}">
+											
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">State</label>
+												<input type="text" class="form-control" name="state" placeholder="{{context.cid.state}}">
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">City</label>
+												<input type="text" class="form-control" name="city" placeholder="{{context.cid.city}}">
+											</div>
+											<div class="form-group col-xl-6">
+												<label class="mr-sm-2">Postal Code</label>
+												<input type="text" class="form-control" name="pincode" placeholder="{{context.cid.pincode}}">
+											</div>
+											<div class="form-group col-xl-12"><br>
+												<input type="submit" class="btn btn-primary pl-1 pr-1" value="Update">
+											</div> 
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Footer -->
+		<footer class="footer">
+		
+			<!-- Footer Top -->
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Quick Links  </h2>
+								<ul>
+									<li>
+										<a href= "{% url 'about-us' %}" >About Us</a>
+									</li>
+									<li>
+										<a href= "{% url 'contact-us' %}" >Contact Us</a>
+									</li>
+									<li>
+										<a href= "{% url 'faq' %}" >Faq</a>
+									</li>
+									<li>
+										<a href="#">Help</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Categories</h2>
+								<ul>
+									<li>
+										<a href= "{% url 's-computers' %}" >Computer</a>
+									</li>
+									<li>
+										<a href= "{% url 'search' %}" >Interior</a>
+									</li>
+									<li>
+										<a href= "{% url 'search' %}" >Car Wash</a>
+									</li>
+									<li>
+										<a href= "{% url 's-cleaning' %}" >Cleaning</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-contact">
+								<h2 class="footer-title">Contact Us</h2>
+								<div class="footer-contact-info">
+									<div class="footer-address">
+										<span><i class="far fa-building"></i></span>
+										<p>4, Humming Bird, Iscon Road, Vallabh Vidhyanagar, Anand</p>
+									</div>
+									<p><i class="fas fa-phone"></i> +91 9824341414</p>
+									<p class="mb-0"><i class="fas fa-envelope"></i> info@sarkaar.com</p>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget">
+								<h2 class="footer-title">Follow Us</h2>
+								<div class="social-icon">
+									<ul>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+										</li>
+									</ul>
+								</div>
+								<div class="subscribe-form">
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <button type="submit" class="btn footer-btn">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Footer Top -->
+			
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="container">
+					<!-- Copyright -->
+					<div class="copyright">
+						<div class="row">
+							<div class="col-md-6 col-lg-6">
+								<div class="copyright-text">
+									<p class="mb-0">&copy; 2020 <a href= "#" >Sarkaar</a>. All rights reserved.</p>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6">
+								<!-- Copyright Menu -->
+								<div class="copyright-menu">
+									<ul class="policy-menu">
+										<li>
+											<a href= "{% url 'term-condition' %}" >Terms and Conditions</a>
+										</li>
+										<li>
+											<a href= "{% url 'privacy-policy' %}" >Privacy</a>
+										</li>
+									</ul>
+								</div>
+								<!-- /Copyright Menu -->
+							</div>
+						</div>
+					</div>
+					<!-- /Copyright -->
+				</div>
+			</div>
+			<!-- /Footer Bottom -->
+			
+		</footer>
+		<!-- /Footer -->
+		
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'users/assets/js/jquery-3.5.0.min.js' %}"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="{% static 'users/assets/js/popper.min.js' %}"></script>
+	<script src="{% static 'users/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+	<!-- Sticky Sidebar JS -->
+	<script src="{% static 'users/assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+	<script src="{% static 'users/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+
+	<!-- Custom JS -->
+	<script src="{% static 'users/assets/js/script.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	
+</body>
+
+<!-- Mirrored from truelysell-html.dreamguystech.com/template/user-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 13:32:17 GMT -->
+</html>

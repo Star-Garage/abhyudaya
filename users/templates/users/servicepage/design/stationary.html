@@ -1,0 +1,1378 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Stationary Designs</title>
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{% static 'users/assets/img/favicon.png' %}">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/fontawesome/css/all.min.css' %}">
+
+	<!-- Owl CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/owlcarousel/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/owlcarousel/owl.theme.default.min.css' %}">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'users/assets/css/infinite-slider.css' %}">
+</head>
+
+<body>
+
+	<div class="main-wrapper">
+
+		<!-- Header -->
+		<header class="header">
+			<nav class="navbar navbar-expand-lg header-nav">
+				<div class="navbar-header">
+					<a id="mobile_btn" href="javascript:void(0);">
+						<span class="bar-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</a>
+					<a href="#" class="navbar-brand logo">
+						<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+					</a>
+					<a href="#" class="navbar-brand logo-small">
+						<img style="height: 30px;" src="{% static 'users/assets/img/head-logo.png' %}" class="img-fluid" alt="Logo">
+					</a>
+				</div>
+				<div class="main-menu-wrapper">
+					<div class="menu-header">
+						<a href="#" class="menu-logo">
+							<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+						</a>
+						<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i
+								class="fas fa-times"></i></a>
+					</div>
+					<ul class="main-nav">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li class="active">
+							<a href="{% url 'categories' %}">Categories</a>
+						</li>
+						<li class="has-submenu">
+							<a href="{% url 'provider-dashboard' %}">Providers</a>
+							<ul class="submenu">
+								<li><a href="{% url 'provider-dashboard' %}">Dashboard</a></li>
+								<li><a href="{% url 'my-services' %}">Services</a></li>
+								<li><a href="{% url 'provider-bookings' %}">Bookings</a></li>
+								<li><a href="{% url 'provider-settings' %}">Profile Settings</a></li>
+								<li><a href="{% url 'provider-wallet' %}">Wallet</a></li>
+								<li><a href="{% url 'provider-subscription' %}">Subscription</a></li>
+								<li><a href="{% url 'provider-availability' %}">Availability</a></li>
+								<li><a href="{% url 'provider-reviews' %}">Reviews</a></li>
+								<li><a href="{% url 'provider-payment' %}">Payment</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="{% url 'customer-dashboard' %}">Customers</a>
+							<ul class="submenu">
+								<li><a href="{% url 'customer-dashboard' %}">Dashboard</a></li>
+								<li><a href="{% url 'customer-bookings' %}">Bookings</a></li>
+								<li><a href="{% url 'customer-settings' %}">Profile Settings</a></li>
+								<li><a href="{% url 'customer-wallet' %}">Wallet</a></li>
+								<li><a href="{% url 'customer-reviews' %}">Reviews</a></li>
+								<li><a href="{% url 'customer-payment' %}">Payment</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="{% url 'search' %}">Search</a></li>
+								<li><a href="#">Service Details</a></li>
+								<li><a href="{% url 'add-service' %}">Add Service</a></li>
+								<li><a href="{% url 'edit-service' %}">Edit Service</a></li>
+								<li><a href="{% url 'chat' %}">Chat</a></li>
+								<li><a href="{% url 'notifications' %}">Notifications</a></li>
+								<li><a href="{% url 'about-us' %}">About Us</a></li>
+								<li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+								<li><a href="{% url 'faq' %}">Faq</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="admin/index.html" target="_blank">Admin</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="modal" data-target="#provider-register">Become a
+								Professional</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="modal" data-target="#user-register">Become a
+								User</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav header-navbar-rht">
+					<li class="nav-item">
+						<a class="nav-link header-login" href="javascript:void(0);" data-toggle="modal"
+							data-target="#login_modal">Login</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- /Header -->
+			<section class="call-us">
+				<div class="container">
+					<div class="row">
+						<div class="col-6">
+							<span>Free Consultation</span>
+							<h2>Do you have a drainage problem?</h2>
+							<p>Hire a skilled Plumber near you to get the comfort you deserve</p>
+						</div>
+						<div class="col-6 call-us-btn">
+							<a href="{% url 'book-service' %}" class="btn btn-call-us">Request A Free Consultation</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		  <!-- Page Content -->
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="service-view">
+							<div class="service-header">
+								<h1>Plumbing works</h1>
+								<address class="service-location"><i class="fas fa-location-arrow"></i> Anand, Gujarat</address>
+								<div class="rating">
+									<i class="fas fa-star filled"></i>
+									<i class="fas fa-star filled"></i>
+									<i class="fas fa-star filled"></i>
+									<i class="fas fa-star filled"></i>
+									<i class="fas fa-star filled"></i>
+									<span class="d-inline-block average-rating">(5)</span>
+								</div>
+								<div class="service-cate">
+									<a href="{% url 'search' %}">Tradesmen</a>
+								</div>
+							</div>
+							<div class="service-details">
+								<ul class="nav nav-pills service-tabs" id="pills-tab" role="tablist"
+									style="justify-content: center;">
+									<li class="nav-item">
+										<a class="nav-link active" id="pills-home-tab" data-toggle="pill"
+											href="#pills-home" role="tab" aria-controls="pills-home"
+											aria-selected="true">Overview</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+											href="#pills-profile" role="tab" aria-controls="pills-profile"
+											aria-selected="false">All Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+											href="#pills-faq" role="tab" aria-controls="pills-faq"
+											aria-selected="false">Faq</a><br>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="pills-why-tab" data-toggle="pill" href="#pills-why"
+											role="tab" aria-controls="pills-why" aria-selected="false">Why Us?</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review"
+											role="tab" aria-controls="pills-review" aria-selected="false">Reviews</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+										aria-labelledby="pills-home-tab">
+										<div class="card">
+											<div class="card-body">
+												<h6><b>Why hire Sarkaar Services for your plumbing repair and installation needs?</b></h6><br>
+													<p><i>Done by efficient, prompt and recommended local plumbers.</i><br>
+														The specialists who we send out are pre-screened and professionally trained to work with precision and attention to detail. 
+														You can count on an enviable, long-standing and excellent reputation for <strong>on-budget and on-time
+														completion of your plumbing project. </strong> So, be sure that the experts understand your needs and 
+														solve your plumbing problems in the shortest amount of time possible without causing a mess at your place.
+													</p>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<h6><b>Why hire Sarkaar Services for your plumbing repair and installation needs?</b></h6><br>
+												<p><i>Done by efficient, prompt and recommended local plumbers.</i><br>
+													The specialists who we send out are pre-screened and professionally trained to work with precision and attention to detail. 
+													You can count on an enviable, long-standing and excellent reputation for <strong>on-budget and on-time
+													completion of your plumbing project. </strong> So, be sure that the experts understand your needs and 
+													solve your plumbing problems in the shortest amount of time possible without causing a mess at your place.
+												</p>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">											
+												<h6><b>Health and safety come first</b></h6><br>
+												<p>We earn your trust by keeping your home safe and secure. From following a strict Safety Policy to meeting all industry standards 
+													proactively, the experts provide you with the peace of mind you need at every step of the service. At Sarkaar Services, <strong> every plumber 
+													holds public liability insurance and goes through extensive training,</strong> so you are at the right place to book a dependable specialist.
+												</p>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<h6><b>Bringing all tools & equipment</b></h6><br>
+												<p>The specialists operate with their own instruments, so we've got you covered there. Plumbing repairs often require the replacement of certain parts, 
+													which is yet another thing that the specialists can take care of for you as they can readily supply everything on site (the costs will be added to your final bill).
+												</p>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<h6><b>You only pay for what you get</b></h6><br>
+												<p>You save money with a fair hourly-based payment system and plan better with an up-front service estimate. 
+													You will pay only for the actual time it took for the specialist to fix your plumbing problem. If a site visit 
+													is needed to diagnose a problem and preempt unexpected costs, you might be charged with a minimum call-out fee 
+													for the initial hour. After that, you pay on a standard half-hour basis.
+												</p>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<h6><b>Your satisfaction is guaranteed</b></h6><br>
+												<p>The performance of every plumber is diligently monitored by supervisors. That’s how we ensure that their work is done at the highest 
+													professional level. Apart from the repairs, your qualified expert will gladly give you valuable advice on how to maintain your plumbing 
+													in top-notch shape. Our ultimate goal is to bring you complete satisfaction with the services you get. Thus, all plumbing jobs come with 
+													full workmanship guarantee for a trouble-free service.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="pills-profile" role="tabpanel"
+										aria-labelledby="pills-profile-tab">
+										<div class="card">
+											<div class="card-body">
+												<h5 class="card-title">Services Offered</h5>
+												<div class="service-offer">
+													<p>Dripping tap, faucet or leaking pipe? Even if you are not exactly sure what is wrong with your domestic plumbing, 
+														the specialist will be able to determine the cause of the problem and fix it in time. From shower replacement and mechanically 
+														unblocking drains/toilets to dealing with wet walls and ceilings, we can cover all sorts of plumbing repair services across your 
+														home and office. Here are some good examples of common plumbing maintenance duties the specialist can do for you:
+													</p>
+													<ul class="list-bullet" style="padding-left: 20px;">
+														<li>Gas and electric boiler installation</li>
+														<li>Electric and gas boiler repair</li>
+														<li>Radiator repair, replacement and installation</li>
+														<li>Fixing variety of plumbing leaks: pipe leaks & bursts, sink basin leaks, etc</li>
+														<li>Detection & repair of indoor and outdoor pipes</li>
+														<li>Fixing dripping or slow running taps, taps/showers that are running cold water only</li>
+														<li>Washing machine and dishwasher installation</li>
+														<li>Shower faults & repairs</li>
+														<li>Drain unblocking services for bathroom/kitchen sinks, toilets, bathtubs, etc.</li>
+														<li>Sump pump replacement</li>
+														<li>Radiator valves changing</li>
+														<li>Toilet repairs and installation</li>
+														<li>Sinks and basins fitting and replacement</li>
+														<li>Fitting replacements</li>
+														<li>Insinkerator or Saniflo repair and replacement</li>
+														<li>Waste disposal installation, removal, replacement and repair</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="pills-faq" role="tabpanel"
+										aria-labelledby="pills-faq-tab">
+										<div class="card">
+											<div class="card-body">
+												<h5 class="card-title">Common Questions</h5>
+												<div class="faq-card">
+													<div class="card">
+														<div class="card-body">
+															<h4 class="card-title" >
+																<a class="collapsed" data-toggle="collapse" href="#collapseOne">01. I need to make some changes to my booking. How do I do that?</a>
+															</h4>
+															<div id="collapseOne" class="card-collapse collapse">
+																<p>
+																	Just log into your Sarkaar account and go to the dashboard section. From there you can reschedule, cancel or add details to your current booking. 
+																	You can also download the GoSarkaar app to customise every aspect of your service and receive instant, innovative, 
+																	and convenient ways to manage your booking, or connect to 24/7 friendly customer agents.
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="card">
+														<div class="card-body">
+															<h4 class="card-title">
+																<a class="collapsed" data-toggle="collapse" href="#collapseTwo">02. Can I get a discount on my plumbing service?</a>
+															</h4>
+															<div id="collapseTwo" class="card-collapse collapse">
+																<p>
+																	You can get a lower price on our whole range of services by joining the Sarkaar Club. If you become a member, 
+																	you also have the chance to benefit from cool perks like priority bookings and seasonal deals.
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="card">
+														<div class="card-body">
+															<h4 class="card-title">
+																<a class="collapsed" data-toggle="collapse" href="#collapseThree">03. Is there anything else I need to know?</a>
+															</h4>
+															<div id="collapseThree" class="card-collapse collapse">
+																<p>
+																	Prices are inclusive of all taxes. Material supply and delivery costs are added to the service cost, if applicable. 
+																	If the plumber arrives and is unable to complete the work due to conditions you have failed to provide, there is a call-out fee 
+																	of 1 hour and the cost of parking/congestion (if applicable).
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="card">
+														<div class="card-body">
+															<h4 class="card-title">
+																<a class="collapsed" data-toggle="collapse" href="#collapseFour">04. How fast can the technician arrive?</a>
+															</h4>
+															<div id="collapseFour" class="card-collapse collapse">
+																<p>
+																	Same-day appointments can be arranged if our schedule allows it. 
+																	If all slots are currently booked, the professional will make sure to arrive the next day the latest.
+																</p>
+															</div>
+														</div>
+													</div>
+												<div class="card">
+													<div class="card-body">
+														<h4 class="card-title">
+															<a class="collapsed" data-toggle="collapse" href="#collapseFive">05.  It’s an emergency! Can the plumber come right now?</a>
+														</h4>
+														<div id="collapseFive" class="card-collapse collapse">
+															<p>
+																We’ll do our best to send the nearby plumber as soon as possible. In the meantime, you can just turn off the main water supply.
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-body">
+														<h4 class="card-title">
+															<a class="collapsed" data-toggle="collapse" href="#collapseSix">06.  What about the new materials or fixtures that may be needed?</a>
+														</h4>
+														<div id="collapseSix" class="card-collapse collapse">
+															<p>
+																It's totally lies at the client's discretion. you can get yourself get materials according to your choice or ask the professional to procure
+																the same. The time taken by the professional to get the material will also be included in the working hours.
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-body">
+														<h4 class="card-title">
+															<a class="collapsed" data-toggle="collapse" href="#collapseSeven">07.  What if no services are availed, how much will I have to pay?</a>
+														</h4>
+														<div id="collapseSeven" class="card-collapse collapse">
+															<p>
+																If in case no services are availed, you just need to pay the visiting charges to the professional.
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-body">
+														<h4 class="card-title">
+															<a class="collapsed" data-toggle="collapse" href="#collapseEight">08.  Is there any guarantee on the service provided?</a>
+														</h4>
+														<div id="collapseEight" class="card-collapse collapse">
+															<p>
+																Yes, A 30-day guarantee after the service has been delivered is provided on all plumbing services
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="pills-why" role="tabpanel"
+										aria-labelledby="pills-why-tab">
+										<div class="card">
+											<div class="card-body">
+												<h4 class="card-title"><strong>Our Perks</strong> </h4>
+												<div class="service-offer">
+													<p>Fast and affordable service from reliable plumbers and Gas Safe engineers guarantees for efficient and stress-free service
+													</p>
+													<ul class="list-bullet">
+														<li>Available 7 days a week & on holidays</li>
+														<li>Large crew ready to help you on the same/next day</li>
+														<li>Jobs done right by knowledgeable, local plumbers </li>
+														<li>Fixing variety of plumbing leaks: pipe leaks & bursts, sink basin leaks, etc</li>
+														<li>Bringing all necessary tools and supplies upon request</li>
+												</div>
+											</div>
+										</div>
+										
+										<div class="card">
+											<div class="card-body">
+												<h4 class="card-title"> <strong>Why Sarkaar's Plumbing Service?</strong></h4>
+												<div class="service-offer">
+													<p>
+														Post service payment - Pay online after you are satisfied and content with the service provided. The payment is taken through an online portal. 
+														The link of the same will be sent to you via email and/or message after your errand has been completed.
+													</p>
+													<p>
+														<strong>Verified experts - </strong> The safety and satisfaction of our customers remain to be on the top of our priority list. 
+														This is the reason that each of them is taken through an internal screening and security check to find their expertise in the field.
+													</p>
+													<p>
+														<strong>Insurance – </strong>  We, at Sarkaar Company, feel responsible for our customers. This is what distinguishes us from other service providers. 
+														We take full responsibility of the ownership of the work undertaken and hence, we have insurance of upto Rs. 5,000 against damages so that you can sit back and relax.
+													</p>
+													<p>
+														We take pride in providing good quality service as our professionals are experts in providing standard workmanship. 
+														In Ahmedabad, Shilaj, Ambali, S. G. Highway and Science city are the areas with the highest demand for our plumbing services.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="pills-review" role="tabpanel"
+										aria-labelledby="pills-review-tab">
+										<h4 class="card-title"><strong>What they say?</strong> </h4>
+										<div class="card review-box">
+											<div class="card-body">
+												<div class="review-list">
+													<div class="review-img">
+														<img class="rounded-circle"
+															src="{% static 'users/assets/img/customer/user-01.jpg' %}"
+															alt="">
+													</div>
+													<div class="review-info">
+														<h5>Jeffrey Akridge</h5>
+														<div class="review-date">August 06, 2020 20:07 pm</div>
+														<p class="mb-0">Good Work</p>
+													</div>
+													<div class="review-count">
+														<div class="rating">
+															<i class="fas fa-star filled"></i>
+															<i class="fas fa-star filled"></i>
+															<i class="fas fa-star filled"></i>
+															<i class="fas fa-star filled"></i>
+															<i class="fas fa-star filled"></i>
+															<span class="d-inline-block average-rating">(5.0)</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<h4 class="card-title"><b>Related Services</b></h4>
+						<div class="service-carousel">
+							<div class="popular-slider owl-carousel owl-theme">
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-03.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-03.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$2</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Electrical</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Electric Panel Repairing Service</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(4.5)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx30</span></span>
+												<span class="col ser-location"><span>Kalispell, Montana</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-04.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-04.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$14</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Car Wash</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Steam Car Wash</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(0)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx74</span></span>
+												<span class="col ser-location"><span>Electra, Texas</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-05.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-05.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$100</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Cleaning</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">House Cleaning Services</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(0)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx91</span></span>
+												<span class="col ser-location"><span>Sylvester, Georgia</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-06.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-06.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$100</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Computer</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Computer & Server AMC Service</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(0)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx92</span></span>
+												<span class="col ser-location"><span>Los Angeles, California</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-07.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-07.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$5</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Interior</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Interior Designing</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(4)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx28</span></span>
+												<span class="col ser-location"><span>Hanover, Maryland</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-08.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-08.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$100</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Construction</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Building Construction Services</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(4)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx62</span></span>
+												<span class="col ser-location"><span>Burr Ridge, Illinois</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-09.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/customer/user-09.jpg' %}"
+														alt="">
+												</a>
+												<span class="service-price">$500</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Painting</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Commercial Painting Services</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(3)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx75</span></span>
+												<span class="col ser-location"><span>Huntsville, Alabama</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="service-widget">
+									<div class="service-img">
+										<a href="#">
+											<img class="img-fluid serv-img" alt="Service Image"
+												src="{% static 'users/assets/img/services/service-10.jpg' %}">
+										</a>
+										<div class="item-info">
+											<div class="service-user">
+												<a href="#">
+													<img src="{% static 'users/assets/img/user.jpg' %}" alt="">
+												</a>
+												<span class="service-price">$150</span>
+											</div>
+											<div class="cate-list">
+												<a class="bg-yellow" href="#">Plumbing</a>
+											</div>
+										</div>
+									</div>
+									<div class="service-content">
+										<h3 class="title">
+											<a href="#">Plumbing Services</a>
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(3)</span>
+										</div>
+										<div class="user-info">
+											<div class="row">
+												<span class="col-auto ser-contact"><i class="fas fa-phone mr-1"></i>
+													<span>xxxxxxxx13</span></span>
+												<span class="col ser-location"><span>Richmond, Virginia</span> <i
+														class="fas fa-map-marker-alt ml-1"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 theiaStickySidebar">
+						<br>
+						<div class="sidebar-widget widget">
+							<div class="card">
+								<div class="card-body" style="background-color:lightpink">
+									<div class="service-amount">
+										<h4> <strong>Book A Plumber for:</strong> </h4>
+									</div>
+									<div class="call-us-btn">
+										<a href="{% url 'book-service' %}" class="btn btn-outline-info"  style="width: 300px;">Pipe/Tap Fitting ></a>
+									</div><br>
+									<div class="call-us-btn">
+										<a href="{% url 'book-service' %}" class="btn btn-outline-info"  style="width: 300px;">Water Leakages ></a>
+									</div><br>
+									<div class="call-us-btn">
+										<a href="{% url 'book-service' %}" class="btn btn-outline-info"  style="width: 300px;">Repairs & Fixes ></a>
+									</div><br>
+									<div class="call-us-btn">
+										<a href="{% url 'book-service' %}" class="btn btn-outline-info"  style="width: 300px;">Installation Services ></a>
+									</div><br>
+									<div class="row">
+										<div class="col-lg-6">
+											<h4> 475</h4> <p> Join us </p>
+										</div>
+										<div class="col-lg-6">
+											<h4> 475</h4> <p> Join us </p>
+										</div>
+									</div>
+									<div class="service-book">
+										<a href="#" class="btn btn-call-us"> Book Service </a>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div>
+							<h4><b class="card-title">Top Service Providers</b></h4>
+						</div>
+						<div class="card provider-widget">
+							<div class="card-body">
+								<div class="about-author">
+									<div class="about-provider-img">
+										<div class="provider-img-wrap">
+											<a href="javascript:void(0);">
+												<img class="img-fluid rounded-circle" alt=""
+													src="{% static 'users/assets/img/provider/provider-01.jpg' %}">
+											</a>
+										</div>
+									</div>
+									<div class="provider-details">
+										<a href="javascript:void(0);" class="ser-provider-name">Pranay Patel</a>
+										<p class="last-seen"><i class="fas fa-circle online"></i> Online</p>
+										<p class="text-muted mb-1">Member Since Apr 2020</p>
+									</div>
+								</div>
+								<hr>
+								<div class="provider-info">
+									<p class="mb-1"><i class="far fa-envelope"></i> <a
+											href="#">pranaypatelXXXX@gmail.com</a></p>
+									<p class="mb-0"><i class="fas fa-phone-alt"></i> XXXXX68807</p>
+								</div>
+							</div>
+						</div>
+						<div class="card provider-widget">
+							<div class="card-body">
+								<div class="about-author">
+									<div class="about-provider-img">
+										<div class="provider-img-wrap">
+											<a href="javascript:void(0);">
+												<img class="img-fluid rounded-circle" alt=""
+													src="{% static 'users/assets/img/provider/provider-01.jpg' %}">
+											</a>
+										</div>
+									</div>
+									<div class="provider-details">
+										<a href="javascript:void(0);" class="ser-provider-name">Harsh Bhavsar</a>
+										<p class="last-seen"><i class="fas fa-circle online"></i> Online</p>
+										<p class="text-muted mb-1">Member Since Apr 2020</p>
+									</div>
+								</div>
+								<hr>
+								<div class="provider-info">
+									<p class="mb-1"><i class="far fa-envelope"></i> <a
+											href="#">harshbhavsar@gmail.com</a></p>
+									<p class="mb-0"><i class="fas fa-phone-alt"></i> xxxxxxxx33</p>
+								</div>
+							</div>
+						</div>
+						<div class="service-book">
+							<button class="btn btn-primary">View More</button>
+						</div><br>
+						<h4><b class="card-title"> Service Availability</b></h4>
+						<div class="card available-widget">
+							<div class="card-body">
+								<ul>
+									<li><span>Monday</span>9:30 AM - 9:00 PM</li>
+									<li><span>Tuesday</span>9:30 AM - 9:00 PM</li>
+									<li><span>Wednesday</span>9:30 AM - 9:00 PM</li>
+									<li><span>Thursday</span>9:30 AM - 9:00 PM</li>
+									<li><span>Friday</span>9:30 AM - 9:00 PM</li>
+									<li><span>Saturday</span>9:30 AM - 9:00 PM</li>
+									<li><span>Sunday</span>10:30 AM - 5:00 PM</li>
+								</ul>
+							</div>
+						</div>
+						<h4 class="card-title"> <strong> Awesome perks with the Sarkaar Club</strong></h4>
+						<div class="card available-widget">
+							<div class="card-body">
+								<p>Now with the Sarkaar Club you can get a major discount on your bookings, including your plumber service! 
+									For a single payment of £79, you get to benefit from special deals, priority booking options and major 
+									discounts on our whole service range for an entire year. It’s the perfect opportunity to save some money, 
+									while still getting to book every service your property needs.
+								</p>
+							</div>
+						</div>
+						<div class="service-book">
+							<button class="btn btn-primary">Get it</button>
+						</div><br>
+					</div>
+				</div>
+			</div>
+		</div>﻿
+		  <!-- Page Content -->
+		<section class="call-us">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<span>Wanna join?</span>
+						<h2>Ready to start/ Expand your Business?</h2>
+						<p>Join with us to explore the unlimited number of opportunities for your passion. </p>
+					</div>
+					<div class="align-self-center col-12 call-us-btn " style="margin-top: 10px;">
+						<a href="javascript:void(0);" class="btn btn-call-us">Join Now</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="how-work">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="heading howitworks">
+							<h2>How It Works</h2>
+							<span>Aliquam lorem ante, dapibus in, viverra quis</span>
+						</div>
+						<div class="howworksec">
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="howwork">
+										<div class="iconround">
+											<div class="steps">01</div>
+											<img src="{% static 'users/assets/img/icon-1.png' %}" alt="">
+										</div>
+										<h3>Choose What To Do</h3>
+										<p>Book a plumber online for a convenient day and time. They will come with the needed tools & equipments.</p>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="howwork">
+										<div class="iconround">
+											<div class="steps">02</div>
+											<img src="{% static 'users/assets/img/icon-2.png' %}" alt="">
+										</div>
+										<h3>Get What You Want</h3>
+										<p>The expert will help you with everything from hanging and mounting to all sorts of odd jobs</p>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="howwork">
+										<div class="iconround">
+											<div class="steps">03</div>
+											<img src="{% static 'users/assets/img/icon-3.png' %}" alt="">
+										</div>
+										<h3>Amazing works</h3>
+										<p>Save time and enjoy your comfort with odd jobs done just the way you wished!.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><br>
+		<section style="height: 350px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="heading">
+						<h2>Most Popular Providers</h2>
+						<span>Explore the greates our Servicers. You won’t be disappointed</span>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="viewall">
+						<h4><a href= "{% url 'categories' %}" >View All <i class="fas fa-angle-right"></i></a></h4>
+						<span>Most Popular</span>
+					</div>
+				</div>
+			</div><br>
+			<div class="customer-logos slider">
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-airbnb.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-pinterest.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-digitalocean.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-discord.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-xboxone.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-facebook.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-intercom.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-instagram.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-paypal.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-netflix.svg' %}"></div>
+			  <div class="slide"><img src="{% static 'users/assets/img/brands/logo-twitch.svg' %}"></div>
+			</div>
+		  </div>
+		</section>
+		<!-- Footer -->
+		<footer class="footer">
+
+			<!-- Footer Top -->
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Quick Links </h2>
+								<ul>
+									<li>
+										<a href="{% url 'about-us' %}">About Us</a>
+									</li>
+									<li>
+										<a href="{% url 'contact-us' %}">Contact Us</a>
+									</li>
+									<li>
+										<a href="{% url 'faq' %}">Faq</a>
+									</li>
+									<li>
+										<a href="#">Help</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Categories</h2>
+								<ul>
+									<li>
+										<a href="{% url 'search' %}">Computer</a>
+									</li>
+									<li>
+										<a href="{% url 'search' %}">Interior</a>
+									</li>
+									<li>
+										<a href="{% url 'search' %}">Car Wash</a>
+									</li>
+									<li>
+										<a href="{% url 'search' %}">Cleaning</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-contact">
+								<h2 class="footer-title">Contact Us</h2>
+								<div class="footer-contact-info">
+									<div class="footer-address">
+										<span><i class="far fa-building"></i></span>
+										<p>4, Humming Bird, Iscon Road, Vallabh Vidhyanagar, Anand</p>
+									</div>
+									<p><i class="fas fa-phone"></i> +91 9824341414</p>
+									<p class="mb-0"><i class="fas fa-envelope"></i> info@sarkaar.com</p>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget">
+								<h2 class="footer-title">Follow Us</h2>
+								<div class="social-icon">
+									<ul>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+										</li>
+									</ul>
+								</div>
+								<div class="subscribe-form">
+									<input type="email" class="form-control" placeholder="Enter your email">
+									<button type="submit" class="btn footer-btn">
+										<i class="fas fa-paper-plane"></i>
+									</button>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Footer Top -->
+
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="container">
+					<!-- Copyright -->
+					<div class="copyright">
+						<div class="row">
+							<div class="col-md-6 col-lg-6">
+								<div class="copyright-text">
+									<p class="mb-0">&copy; 2020 <a href="#">Sarkaar</a>. All rights reserved.</p>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6">
+								<!-- Copyright Menu -->
+								<div class="copyright-menu">
+									<ul class="policy-menu">
+										<li>
+											<a href="{% url 'term-condition' %}">Terms and Conditions</a>
+										</li>
+										<li>
+											<a href="{% url 'privacy-policy' %}">Privacy</a>
+										</li>
+									</ul>
+								</div>
+								<!-- /Copyright Menu -->
+							</div>
+						</div>
+					</div>
+					<!-- /Copyright -->
+				</div>
+			</div>
+			<!-- /Footer Bottom -->
+
+		</footer>
+		<!-- /Footer -->
+
+	</div>
+
+	<!-- Provider Register Modal -->
+	<div class="modal account-modal fade multi-step" id="provider-register" data-keyboard="false"
+		data-backdrop="static">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header p-0 border-0">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="login-header">
+						<h3>Join as a Provider</h3>
+					</div>
+
+					<!-- Register Form -->
+					<form action="https://truelysell-html.dreamguystech.com/template/index.html">
+						<div class="form-group form-focus">
+							<label class="focus-label">Name</label>
+							<input type="text" class="form-control" placeholder="johndoe@exapmle.com">
+						</div>
+						<div class="form-group form-focus">
+							<label class="focus-label">Mobile Number</label>
+							<input type="text" class="form-control" placeholder="986 452 1236">
+						</div>
+						<div class="form-group form-focus">
+							<label class="focus-label">Create Password</label>
+							<input type="password" class="form-control" placeholder="********">
+						</div>
+						<div class="text-right">
+							<a class="forgot-link" href="#">Already have an account?</a>
+						</div>
+						<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Signup</button>
+						<div class="login-or">
+							<span class="or-line"></span>
+							<span class="span-or">or</span>
+						</div>
+						<div class="row form-row social-login">
+							<div class="col-6">
+								<a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i>
+									Login</a>
+							</div>
+							<div class="col-6">
+								<a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i>
+									Login</a>
+							</div>
+						</div>
+					</form>
+					<!-- /Register Form -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Provider Register Modal -->
+
+	<!-- User Register Modal -->
+	<div class="modal account-modal fade multi-step" id="user-register" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header p-0 border-0">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="login-header">
+						<h3>Join as a User</h3>
+					</div>
+
+					<!-- Register Form -->
+					<form action="https://truelysell-html.dreamguystech.com/template/index.html">
+						<div class="form-group form-focus">
+							<label class="focus-label">Name</label>
+							<input type="text" class="form-control" placeholder="johndoe@exapmle.com">
+						</div>
+						<div class="form-group form-focus">
+							<label class="focus-label">Mobile Number</label>
+							<input type="text" class="form-control" placeholder="986 452 1236">
+						</div>
+						<div class="form-group form-focus">
+							<label class="focus-label">Create Password</label>
+							<input type="password" class="form-control" placeholder="********">
+						</div>
+						<div class="text-right">
+							<a class="forgot-link" href="#">Already have an account?</a>
+						</div>
+						<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Signup</button>
+						<div class="login-or">
+							<span class="or-line"></span>
+							<span class="span-or">or</span>
+						</div>
+						<div class="row form-row social-login">
+							<div class="col-6">
+								<a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i>
+									Login</a>
+							</div>
+							<div class="col-6">
+								<a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i>
+									Login</a>
+							</div>
+						</div>
+					</form>
+					<!-- /Register Form -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /User Register Modal -->
+
+	<!-- Login Modal -->
+	<div class="modal account-modal fade" id="login_modal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header p-0 border-0">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+							aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="login-header">
+						<h3>Login <span>Truelysell</span></h3>
+					</div>
+					<form action="https://truelysell-html.dreamguystech.com/template/index.html">
+						<div class="form-group form-focus">
+							<label class="focus-label">Email</label>
+							<input type="email" class="form-control" placeholder="truelysell@example.com">
+						</div>
+						<div class="form-group form-focus">
+							<label class="focus-label">Password</label>
+							<input type="password" class="form-control" placeholder="********">
+						</div>
+						<div class="text-right">
+						</div>
+						<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button>
+						<div class="login-or"> <span class="or-line"></span>
+							<span class="span-or">or</span>
+						</div>
+						<div class="row form-row social-login">
+							<div class="col-6"> <a href="#" class="btn btn-facebook btn-block"><i
+										class="fab fa-facebook-f mr-1"></i> Login</a>
+							</div>
+							<div class="col-6"> <a href="#" class="btn btn-google btn-block"><i
+										class="fab fa-google mr-1"></i> Login</a>
+							</div>
+						</div>
+						<div class="text-center dont-have">Don’t have an account? <a href="#">Register</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Login Modal -->
+
+	<!-- jQuery -->
+	<script src="{% static 'users/assets/js/jquery-3.5.0.min.js' %}"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="{% static 'users/assets/js/popper.min.js' %}"></script>
+	<script src="{% static 'users/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+	<!-- Sticky Sidebar JS -->
+	<script src="{% static 'users/assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+	<script src="{% static 'users/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+
+	<!-- Datepicker Core JS -->
+	<script src="{% static 'users/assets/js/moment.min.js' %}"></script>
+	<script src="{% static 'users/assets/js/bootstrap-datetimepicker.min.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+	<!-- Owl JS -->
+	<script src="{% static 'users/assets/plugins/owlcarousel/owl.carousel.min.js' %}"></script>
+
+	<!-- Custom JS -->
+	<script src="{% static 'users/assets/js/script.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+			$('.customer-logos').slick({
+			  slidesToShow: 6,
+			  slidesToScroll: 1,
+			  autoplay: true,
+			  autoplaySpeed: 1000,
+			  arrows: false,
+			  dots: false,
+			  pauseOnHover: false,
+			  responsive: [{
+				breakpoint: 768,
+				settings: {
+				  slidesToShow: 4
+				}
+			  }, {
+				breakpoint: 520,
+				settings: {
+				  slidesToShow: 3
+				}
+			  }]
+			});
+		  });
+	</script>
+</body>
+
+<!-- Mirrored from truelysell-html.dreamguystech.com/template/service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 13:32:19 GMT -->
+
+</html>

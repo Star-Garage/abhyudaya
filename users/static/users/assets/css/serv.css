@@ -1,0 +1,46 @@
+
+		.scrolling-wrapper-serv{
+			overflow: auto;
+			
+		}
+	.serv-card{
+		background: white;
+		padding: 20px;
+		width: 122px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border: 1px solid #000000; 
+		border-radius:25px;
+	}
+
+		.nav-pills-custom .nav-link {
+			color: #aaa;
+			background: #fff;
+			position: relative;
+		}
+		
+		.nav-pills-custom .nav-link.active {
+			color: #b6457e;
+			background: #fff;
+		}
+		
+		
+		/* Add indicator arrow for the active tab */
+		@media (min-width: 992px) {
+			.nav-pills-custom .nav-link::before {
+				content: '';
+				display: block;
+				border-top: 8px solid transparent;
+				border-left: 10px solid #fff;
+				border-bottom: 8px solid transparent;
+				position: absolute;
+				top: 50%;
+				right: -10px;
+				transform: translateY(-50%);
+				opacity: 0;
+			}
+		}
+		
+		.nav-pills-custom .nav-link.active::before {
+			opacity: 1;
+		}
+		

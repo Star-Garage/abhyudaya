@@ -1,0 +1,1042 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from truelysell-html.dreamguystech.com/template/provider-availability.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 13:32:15 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Slots Available</title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{% static 'users/assets/img/favicon.png' %}">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"> 
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'users/assets/plugins/fontawesome/css/all.min.css' %}">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{% static 'users/assets/css/style.css' %}">
+</head>
+
+<body>
+
+	<div class="main-wrapper">
+	
+		<!-- Header -->
+		<header class="header">
+			<nav class="navbar navbar-expand-lg header-nav">
+				<div class="navbar-header">
+					<a id="mobile_btn" href="javascript:void(0);">
+						<span class="bar-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</a>
+					<a href="#" class="navbar-brand logo">
+						<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+					</a>
+					<a href="#" class="navbar-brand logo-small">
+						<img src="{% static 'users/assets/img/head-logo.png' %}" class="img-fluid" alt="Logo">
+					</a>
+				</div>
+				<div class="main-menu-wrapper">
+					<div class="menu-header">
+						<a href="#" class="menu-logo">
+							<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+						</a>
+						<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
+					</div>
+					<ul class="main-nav">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href= "{% url 'categories' %}" >Categories</a>
+						</li>
+						<li><a href= "{% url 'about-us' %}" >About Us</a></li>
+						<li class="has-submenu active">
+							<a href= "{% url 'provider-dashboard' %}" >Providers</a>
+							<ul class="submenu">
+								<li><a href= "{% url 'provider-dashboard' %}" >Dashboard</a></li>
+								<li><a href= "{% url 'my-services' %}" >Services</a></li>
+								<li><a href= "{% url 'provider-bookings' %}" >Bookings</a></li>
+								<li><a href= "{% url 'provider-settings' %}" >Profile Settings</a></li>
+								<li><a href= "{% url 'provider-wallet' %}" >Wallet</a></li>
+								<li><a href= "{% url 'provider-subscription' %}" >Subscription</a></li>
+								<li class="active"><a href= "{% url 'provider-availability' %}" >Availability</a></li>
+								<li><a href= "{% url 'provider-reviews' %}" >Reviews</a></li>
+								<li><a href= "{% url 'provider-payment' %}" >Payment</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href= "{% url 'add-service' %}" >Add Service</a></li>
+								<li><a href= "{% url 'edit-service' %}" >Edit Service</a></li>
+								<li><a href= "{% url 'faq' %}" >Faq</a></li>
+								<li><a href="{% url 'term-condition' %}">Terms & Conditions</a></li>
+								<li><a href="{% url 'term-condition' %}">Privacy Policy</a></li>
+							</ul>
+						</li>
+						<li><a href= "{% url 'contact-us' %}" >Contact Us</a></li>
+						<li><a href="{% url 'search' %}"><b><i class="fas fa-search"></i></a></li>
+					</ul>
+				</div>
+
+				<ul class="nav header-navbar-rht">
+
+					<li class="nav-item desc-list">
+						<a href= "{% url 'add-service' %}"  class="nav-link header-login">
+							<i class="fas fa-plus-circle mr-1"></i> <span>Post a Service</span>
+						</a>
+					</li>
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown logged-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fas fa-bell"></i> <span class="badge badge-pill bg-yellow">1</span>
+						</a>
+						<div class="dropdown-menu notify-blk dropdown-menu-right notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti">Clear All  </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/customer/user-01.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Jeffrey Akridge has booked your service</span></p>
+													<p class="noti-time"><span class="notification-time">Today 10:04 PM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/customer/user-02.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Nancy Olson has booked your service</span></p>
+													<p class="noti-time"><span class="notification-time">Today 9:45 PM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/customer/user-03.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Ramona Kingsley has booked your service</span></p>
+													<p class="noti-time"><span class="notification-time">Yesterday 8:17 AM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/customer/user-04.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Ricardo Lung has booked your service</span></p>
+													<p class="noti-time"><span class="notification-time">Yesterday 6:20 AM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href= "{% url 'notifications' %}" >
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{% static 'users/assets/img/customer/user-05.jpg' %}">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"> <span class="noti-title">Annette Silva has booked your service</span></p>
+													<p class="noti-time"><span class="notification-time">17 Sep 2020 10:04 PM</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href= "{% url 'notifications' %}" >View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+
+					<!-- chat -->
+					<li class="nav-item logged-item">
+						<a href= "{% url 'chat' %}"  class="nav-link">
+							<i class="fa fa-comments" aria-hidden="true"></i>
+						</a>
+					</li>
+					<!-- /chat -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow logged-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+							<span class="user-img">
+								<img class="rounded-circle" src="{% static 'users/assets/img/provider/provider-01.jpg' %}" alt="" width="31">
+							</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img class="avatar-img rounded-circle" src="{% static 'users/assets/img/provider/provider-01.jpg' %}" alt="">
+								</div>
+								<div class="user-text">
+									<h6 class="text-truncate">{{context.pid.name}}</h6>
+									<p class="text-muted mb-0">{{context.uid.role}}</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href= "{% url 'provider-settings' %}" >Profile</a>
+							<a class="dropdown-item" href= "{% url 'provider-bookings' %}" >My Orders</a>
+							<a class="dropdown-item" href= "{% url 'provider-bookings' %}" >My Bookings</a>
+							<a class="dropdown-item" href= "{% url 'chat' %}" >Chat</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+
+				</ul>
+
+			</nav>
+		</header>
+		<!-- /Header -->
+		
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-md-4 theiaStickySidebar">
+						<div class="mb-4">
+							<div class="d-sm-flex flex-row flex-wrap text-center text-sm-left align-items-center">
+								<img alt="profile image" src="{% static 'users/assets/img/provider/provider-01.jpg' %}" class="avatar-lg rounded-circle">
+								<div class="ml-sm-3 ml-md-0 ml-lg-3 mt-2 mt-sm-0 mt-md-2 mt-lg-0">
+									<h6 class="mb-0"> {{context.pid.name}} </h6>
+									<p class="text-muted mb-0">Member Since Apr 2020</p>
+								</div>
+							</div>
+						</div>
+						<div class="widget settings-menu">
+							<ul>
+								<li class="nav-item">
+									<a href= "{% url 'provider-dashboard' %}"  class="nav-link">
+										<i class="fas fa-chart-line"></i> <span>Dashboard</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'my-services' %}"  class="nav-link">
+										<i class="far fa-address-book"></i> <span>My Services</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-bookings' %}"  class="nav-link">
+										<i class="far fa-calendar-check"></i> <span>Booking List</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-settings' %}"  class="nav-link">
+										<i class="far fa-user"></i> <span>Profile Settings</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-wallet' %}"  class="nav-link">
+										<i class="far fa-money-bill-alt"></i> <span>Wallet</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-subscription' %}"  class="nav-link">
+										<i class="far fa-calendar-alt"></i> <span>Subscription</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-availability' %}"  class="nav-link active">
+										<i class="far fa-clock"></i> <span>Availability</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-reviews' %}"  class="nav-link">
+										<i class="far fa-star"></i> <span>Reviews</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href= "{% url 'provider-payment' %}"  class="nav-link">
+										<i class="fas fa-hashtag"></i> <span>Payment</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-9 col-md-8">
+						<div class="card mb-0">
+							<div class="card-body">
+								<form>
+									<div class="form-group">
+										<p>Availability <span class="text-danger">*</span>
+										</p>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="table-responsive">
+													<table class="table availability-table">
+														<tbody>
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> All Days
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															<!-- monday -->
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Monday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															
+															<!-- tuesday -->
+															
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Tuesday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															<!-- wednesday -->
+															
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Wednesday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															<!-- thursday -->
+															
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Thursday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															<!-- friday -->
+															
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Friday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															<!-- saturday -->
+															
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Saturday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+															<!-- sunday -->
+															
+															<tr>
+																<td>
+																	<input type="checkbox" class="mr-1"> Sunday
+																</td>
+																<td class="w-180">
+																	From time 
+																	<span class="time-select mb-1">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+																<td class="w-155">
+																	To time
+																	<span class="time-select">
+																		<select class="form-control">
+																			<option>Select Time</option>
+																			<option>00:00 AM</option>
+																			<option>01:00 AM</option>
+																			<option>02:00 AM</option>
+																			<option>03:00 AM</option>
+																			<option>04:00 AM</option>
+																			<option>05:00 AM</option>
+																			<option>06:00 AM</option>
+																			<option>07:00 AM</option>
+																			<option>08:00 AM</option>
+																			<option>09:00 AM</option>
+																			<option>10:00 AM</option>
+																			<option>11:00 AM</option>
+																			<option>12:00 PM</option>
+																			<option>01:00 PM</option>
+																			<option>02:00 PM</option>
+																			<option>03:00 PM</option>
+																			<option>04:00 PM</option>
+																			<option>05:00 PM</option>
+																			<option>06:00 PM</option>
+																			<option>07:00 PM</option>
+																			<option>08:00 PM</option>
+																			<option>09:00 PM</option>
+																			<option>10:00 PM</option>
+																			<option>11:00 PM</option>
+																		</select>
+																	</span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="submit-section text-right">
+										<button class="btn btn-primary submit-btn" type="submit">Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>﻿
+			</div>﻿
+		
+		<!-- Footer -->
+		<footer class="footer">
+		
+			<!-- Footer Top -->
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Quick Links  </h2>
+								<ul>
+									<li>
+										<a href= "{% url 'about-us' %}" >About Us</a>
+									</li>
+									<li>
+										<a href= "{% url 'contact-us' %}" >Contact Us</a>
+									</li>
+									<li>
+										<a href= "{% url 'faq' %}" >Faq</a>
+									</li>
+									<li>
+										<a href="#">Help</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Categories</h2>
+								<ul>
+									<li>
+										<a href= "{% url 's-computers' %}" >Computer</a>
+									</li>
+									<li>
+										<a href= "{% url 'search' %}" >Interior</a>
+									</li>
+									<li>
+										<a href= "{% url 'search' %}" >Car Wash</a>
+									</li>
+									<li>
+										<a href= "{% url 's-cleaning' %}" >Cleaning</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-contact">
+								<h2 class="footer-title">Contact Us</h2>
+								<div class="footer-contact-info">
+									<div class="footer-address">
+										<span><i class="far fa-building"></i></span>
+										<p>4, Humming Bird, Iscon Road, Vallabh Vidhyanagar, Anand</p>
+									</div>
+									<p><i class="fas fa-phone"></i> +91 9824341414</p>
+									<p class="mb-0"><i class="fas fa-envelope"></i> info@sarkaar.com</p>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget">
+								<h2 class="footer-title">Follow Us</h2>
+								<div class="social-icon">
+									<ul>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+										</li>
+									</ul>
+								</div>
+								<div class="subscribe-form">
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <button type="submit" class="btn footer-btn">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Footer Top -->
+			
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="container">
+					<!-- Copyright -->
+					<div class="copyright">
+						<div class="row">
+							<div class="col-md-6 col-lg-6">
+								<div class="copyright-text">
+									<p class="mb-0">&copy; 2020 <a href= "#" >Sarkaar</a>. All rights reserved.</p>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6">
+								<!-- Copyright Menu -->
+								<div class="copyright-menu">
+									<ul class="policy-menu">
+										<li>
+											<a href= "{% url 'term-condition' %}" >Terms and Conditions</a>
+										</li>
+										<li>
+											<a href= "{% url 'privacy-policy' %}" >Privacy</a>
+										</li>
+									</ul>
+								</div>
+								<!-- /Copyright Menu -->
+							</div>
+						</div>
+					</div>
+					<!-- /Copyright -->
+				</div>
+			</div>
+			<!-- /Footer Bottom -->
+			
+		</footer>
+		<!-- /Footer -->
+		
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'users/assets/js/jquery-3.5.0.min.js' %}"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="{% static 'users/assets/js/popper.min.js' %}"></script>
+	<script src="{% static 'users/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+	<!-- Sticky Sidebar JS -->
+	<script src="{% static 'users/assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+	<script src="{% static 'users/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+
+	<!-- Custom JS -->
+	<script src="{% static 'users/assets/js/script.js' %}"></script>
+	
+</body>
+
+<!-- Mirrored from truelysell-html.dreamguystech.com/template/provider-availability.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 13:32:15 GMT -->
+</html>
