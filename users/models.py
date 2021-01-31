@@ -36,3 +36,10 @@ class Customer(models.Model):
     state=models.CharField(max_length=15,blank=True)
     city=models.CharField(max_length=20,blank=True)
     pincode=models.CharField(max_length=6,blank=True)
+
+class iInquiry(models.Model):
+    i_fname=models.CharField(max_length=30,blank=True)
+    i_lname=models.CharField(max_length=30,blank=True)
+    i_email=models.EmailField(unique=True)
+    i_contact=models.CharField(max_length=10,blank=True)
+    i_msg=models.CharField(max_length=400,blank=True)

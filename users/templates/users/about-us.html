@@ -19,6 +19,7 @@
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			text-align: center;
 			overflow: hidden;
+			border-radius: 20px;
 			position: relative;
 		  }
 		  
@@ -197,7 +198,7 @@
 						<li class="has-submenu">
 							<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
 							<ul class="submenu">
-								<li><a href= "{% url 'faq' %}" >Faq</a></li>
+								<li><a href= "{% url 'splus' %}" >splus</a></li>
 								<li><a href="{% url 'term-condition' %}">Terms & Conditions</a></li>
 								<li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
 							</ul>
@@ -238,28 +239,19 @@
 		</header>
 <!-- /Header -->
 		
-	<!-- Breadcrumb -->
-		<div class="breadcrumb-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="breadcrumb-title">
-							<h2>About Us</h2>
-						</div>
-					</div>
-					<div class="col-auto float-right ml-auto breadcrumb-menu">
-						<nav aria-label="breadcrumb" class="page-breadcrumb">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href= "#" >Home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">About Us</li>
-							</ol>
-						</nav>
-					</div>
-				</div>
-			</div>
+<div class="row col-12">
+	<div class="col-md-6">
+		<div class="heading">
+			<h2>About Us</h2>
+			<span>Who we are?</span>
 		</div>
-	<!-- /Breadcrumb -->
-	
+	</div>
+	<div class="col-md-6">
+		<div class="viewall">
+			<span>About Us</span>
+		</div>
+	</div>
+</div>
 	<!-- About Us -->
 		<section class="about-us">
 			<div class="content">
@@ -292,18 +284,17 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12  pl-4 pt-2 pr-4">
-					<span style="border: #e60073 solid; background:#faf9f9; padding: 10px; border-radius:5px"><strong style="color: #000000;"> 30 % <i>OFF</i></strong></span>
-					<h2 style="margin-top: 20px;"> Are you facing some problem with your electrical appliance? </h2>
-					<p> Get your appliances serviced or repaired with the sarkaar's appliances-repair service at the 30 % off</p><br>
+					<span style="border: #e60073 solid; background:#faf9f9; padding: 10px; border-radius:5px"><strong style="color: #000000;"> 20 % <i>OFF</i></strong></span>
+					<h2 style="margin-top: 20px;"> Are you facing some problem with your electrical issue? </h2>
+					<p> Get your appliances serviced or repaired with the sarkaar's Electricians service at the 20 % off</p><br>
 				</div>
 				<div class="col-12 call-us-btn" style="border: #ebe3e7;">
-					<a href="javascript:void(0);" class="btn btn-call-us">Book Now</a>
+					<a href="{% url 'electricians' %}" class="btn btn-call-us">Book Now</a>
 				</div>
 			</div>
 		</div>
 	</section><br>
 	<!-- /Ad1 Section -->
-
 
 	<!-- How It Works -->
 	<section class="how-work">
@@ -322,9 +313,8 @@
 										<div class="steps">01</div>
 										<img src="{% static 'users/assets/img/icon-1.png' %}" alt="">
 									</div>
-									<h3>Choose What To Do</h3>
-									<p>Book a Service online for a convenient day and time. They will come with the
-										needed tools & equipments.</p>
+									<h3>Choose What To Get</h3>
+									<p>Book a Service online for a convenient day and time. The Pro's will come with the needed tools & equipments.</p>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -334,8 +324,7 @@
 										<img src="{% static 'users/assets/img/icon-2.png' %}" alt="">
 									</div>
 									<h3>Get What You Want</h3>
-									<p>The expert will help you with everything from hanging and mounting to all sorts
-										of odd jobs</p>
+									<p>The Pro's will arrive next to your doorstep and willl take care of everything from A2z.</p>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -344,8 +333,8 @@
 										<div class="steps">03</div>
 										<img src="{% static 'users/assets/img/icon-3.png' %}" alt="">
 									</div>
-									<h3>Amazing Places</h3>
-									<p>Save time and enjoy your comfort with odd jobs done just the way you wished!.</p>
+									<h3>Amazing Life</h3>
+									<p>Save Time & Energy and enjoy your comfort with your problem solved just the way you wished!.</p>
 								</div>
 							</div>
 						</div>
@@ -356,7 +345,6 @@
 	</section><br><br>
 	<!-- /How It Works -->
 
-
 	<!-- Ad -->
 	<section class="call-us container" style="background: #000000;
 	background-image: url('https://www.transparenttextures.com/patterns/dark-brick-wall.png'); border-radius: 60px 0px">
@@ -364,16 +352,17 @@
 			<div class="row">
 				<div class="col-12 pl-4 pt-2 pr-4">
 					<span style="border: #000000 solid; background:#fff; padding: 10px; border-radius:10px"><strong style="color: #000000;"> Sarkaar +</strong></span>
-					<h2 style="margin-top: 20px;">The Sarkaar Club is here</h2>
+					<h2 style="margin-top: 20px;">The Sarkaar+ is here.</h2>
 					<p> Enjoy the maximum benefits to be the elite customer and a part of the group to change the world.</p><br>
 				</div>
 				<div class="col-12 call-us-btn">
-					<a href="javascript:void(0);" class="btn btn-call-us">Join Now</a>
+					<a href="{% url 'splus' %}" class="btn btn-call-us">Join Now</a>
 				</div>
 			</div>
 		</div>
 	</section><br>
 	<!-- /Ad -->
+
 
 	<!-- Team -->
 		<section>
@@ -490,7 +479,6 @@
 		</section>
 	<!-- /Team -->
 
-
 	<!-- Footer -->
 	<footer class="footer">
 		<!-- Footer Top -->
@@ -503,16 +491,16 @@
 							<h2 class="footer-title">Quick Links </h2>
 							<ul>
 								<li>
-									<a href="{% url 'about-us' %}">Sarkaar +</a>
+									<a href="{% url 'splus' %}">Sarkaar +</a>
+								</li>
+								<li>
+									<a href="{% url 'index' %}">Home</a>
 								</li>
 								<li>
 									<a href="{% url 'about-us' %}">About Us</a>
 								</li>
 								<li>
 									<a href="{% url 'contact-us' %}">Contact Us</a>
-								</li>
-								<li>
-									<a href="{% url 'faq' %}">Faq</a>
 								</li>
 							</ul>
 						</div>
@@ -524,16 +512,16 @@
 							<h2 class="footer-title">Categories</h2>
 							<ul>
 								<li>
-									<a href="{% url 's-computers' %}">Deveopment</a>
+									<a href="{% url 's-design' %}">Design</a>
 								</li>
 								<li>
-									<a href="{% url 'search' %}">Appliances Repair</a>
+									<a href="{% url 's-artists' %}">Artists</a>
 								</li>
 								<li>
-									<a href="{% url 'search' %}">Artists</a>
+									<a href="{% url 's-computers' %}">Development</a>
 								</li>
 								<li>
-									<a href="{% url 's-cleaning' %}">Educationals</a>
+									<a href="{% url 's-educationals' %}">Educationals</a>
 								</li>
 							</ul>
 						</div>
@@ -561,22 +549,22 @@
 							<div class="social-icon">
 								<ul>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+										<a href="https://www.facebook.com/sarkaar.settings" target="_blank"><i class="fab fa-facebook-f"></i> </a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+										<a href="https://twitter.com/sarkaarsettings" target="_blank"><i class="fab fa-twitter"></i> </a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+										<a href="https://www.youtube.com/channel/UCAhMWZDHJXaKrqprlv8gdTA" target="_blank"><i class="fab fa-youtube"></i></a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+										<a href="https://www.instagram.com/sarkaarsettings/" target="_blank"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+										<a href="https://www.linkedin.com/company/sarkaarsettings/" target="_blank"><i class="fab fa-linkedin"></i></a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+										<a href="https://wa.me/9824341414" target="_blank"><i class="fab fa-whatsapp"></i></a>
 									</li>
 								</ul>
 							</div>
@@ -601,7 +589,7 @@
 					<div class="row">
 						<div class="col-md-6 col-lg-6">
 							<div class="copyright-text">
-								<p class="mb-0">&copy; 2020 <a href="#">Sarkaar</a>. All rights reserved.</p>
+								<p class="mb-0">&copy; 2021 <a href="#">Sarkaar</a>. All rights reserved.</p>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-6">
@@ -769,5 +757,4 @@
 	
 </body>
 
-<!-- Mirrored from truelysell-html.dreamguystech.com/template/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 13:32:19 GMT -->
 </html>

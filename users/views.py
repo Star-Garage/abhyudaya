@@ -782,7 +782,7 @@ def contact_us(request):
     else:
         return render(request, "users/contact-us.html")
 
-def faq(request):
+def splus(request):
     if "email" in request.session:
         uid=User.objects.get(email=request.session['email'])
         if uid.role=="Provider":
@@ -791,18 +791,18 @@ def faq(request):
                 'uid':uid,
                 'pid':pid,
             }
-            return render(request, "users/faq.html", {'context': context})
+            return render(request, "users/splus.html", {'context': context})
         elif uid.role=="Customer":
             cid=Customer.objects.get(user_id=uid)
             context={
                 'uid':uid,
                 'cid':cid,
             }
-            return render(request, "users/faq.html", {'context': context})
+            return render(request, "users/splus.html", {'context': context})
         else:
-            return render(request, "users/faq.html")
+            return render(request, "users/splus.html")
     else:
-        return render(request, "users/faq.html")
+        return render(request, "users/splus.html")
 
 def privacy_policy(request):
     if "email" in request.session:
@@ -873,8 +873,6 @@ def chat(request):
 def edit_service(request):
     return render(request, "users/edit-service.html")
 
-def splus(request):
-    return render(request, "users/splus.html")
 
 # Others >>>
 
@@ -903,5 +901,15 @@ def update_profile(request):
         return render(request, "users/customer/customer-settings.html")
 # Update >>>
 
+def i_inquiry(request):
+    i_fname=request.POST['i_fname']
+    i_lname=request.POST['i_lname']
+    i_email=request.POST['i_email']
+    i_contact=request.POST['i_contact']
+    i_msg=request.POST['i_msg']
+    inq=iInquiry.objects.create(i_email=i_email, i_fname=i_fname, i_lname=i_lname, i_contact=i_contact, i_msg=i_msg )
+    return render(request, "users/contact-us.html")
+
 def ex(request):
     return render(request, "users/ex.html")
+

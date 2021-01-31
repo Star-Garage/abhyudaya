@@ -57,10 +57,10 @@
 			<ul class="main-nav">
 				<li><a href="{% url 'search' %}"><i class="fas fa-street-view"></i> {{context.pid.city}}</a>
 				</li>
-				<li class="active">
+				<li>
 					<a href="#">Home</a>
 				</li>
-				<li>
+				<li class="active">
 					<a href="{% url 'categories' %}">Categories</a>
 				</li>
 				<li><a href="{% url 'about-us' %}">About Us</a></li>
@@ -95,7 +95,7 @@
 				<li class="has-submenu">
 					<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
 					<ul class="submenu">
-						<li><a href="{% url 'faq' %}">Faq</a></li>
+						<li><a href="{% url 'splus' %}">splus</a></li>
 						<li><a href="{% url 'term-condition' %}">Terms & Conditions</a></li>
 						<li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
 						<li><a href="#" class="nav-item nav-link notifications" ><i class="fa fa-bell"style="color: #FD003D;"></i><span class="badge"><sup style="color: #f0f0f0;">1</sup></span> Notification</a></li>
@@ -179,7 +179,7 @@
 										<h3><span><i class="fas fa-circle"></i>Presentations</span></h3>
 									</div>
 									<div class="cate-count">
-										<i class="fas fa-clone"></i> 18
+										<i class="far fa-copyright"></i> sarkaar
 									</div>
 								</div>
 							</a>
@@ -192,7 +192,7 @@
 										<h3><span><i class="fas fa-circle"></i>Reports & Thesis</span></h3>
 									</div>
 									<div class="cate-count">
-										<i class="fas fa-clone"></i> 32
+										<i class="far fa-copyright"></i> sarkaar
 									</div>
 								</div>
 							</a>
@@ -205,7 +205,7 @@
 										<h3><span><i class="fas fa-circle"></i>Resume/CV & Bio-data</span></h3>
 									</div>
 									<div class="cate-count">
-										<i class="fas fa-clone"></i> 19
+										<i class="far fa-copyright"></i> sarkaar
 									</div>
 								</div>
 							</a>
@@ -218,7 +218,7 @@
 										<h3><span><i class="fas fa-circle"></i>Career Consultant</span></h3>
 									</div>
 									<div class="cate-count">
-										<i class="fas fa-clone"></i> 19
+										<i class="far fa-copyright"></i> sarkaar
 									</div>
 								</div>
 							</a>
@@ -231,7 +231,7 @@
 										<h3><span><i class="fas fa-circle"></i>Ebooks & Lecture Notes</span></h3>
 									</div>
 									<div class="cate-count">
-										<i class="fas fa-clone"></i> 19
+										<i class="far fa-copyright"></i> sarkaar
 									</div>
 								</div>
 							</a>
@@ -244,7 +244,7 @@
 										<h3><span><i class="fas fa-circle"></i>Student Projects</span></h3>
 									</div>
 									<div class="cate-count">
-										<i class="fas fa-clone"></i> 19
+										<i class="far fa-copyright"></i> sarkaar
 									</div>
 								</div>
 							</a>
@@ -254,8 +254,6 @@
 	
 		
 	</div>  
-
-
 
 	<!-- Footer -->
 	<footer class="footer">
@@ -269,16 +267,16 @@
 							<h2 class="footer-title">Quick Links </h2>
 							<ul>
 								<li>
-									<a href="{% url 'about-us' %}">Sarkaar +</a>
+									<a href="{% url 'splus' %}">Sarkaar +</a>
+								</li>
+								<li>
+									<a href="{% url 'index' %}">Home</a>
 								</li>
 								<li>
 									<a href="{% url 'about-us' %}">About Us</a>
 								</li>
 								<li>
 									<a href="{% url 'contact-us' %}">Contact Us</a>
-								</li>
-								<li>
-									<a href="{% url 'faq' %}">Faq</a>
 								</li>
 							</ul>
 						</div>
@@ -290,16 +288,16 @@
 							<h2 class="footer-title">Categories</h2>
 							<ul>
 								<li>
-									<a href="{% url 's-computers' %}">Deveopment</a>
+									<a href="{% url 's-design' %}">Design</a>
 								</li>
 								<li>
-									<a href="{% url 'search' %}">Appliances Repair</a>
+									<a href="{% url 's-artists' %}">Artists</a>
 								</li>
 								<li>
-									<a href="{% url 'search' %}">Artists</a>
+									<a href="{% url 's-computers' %}">Development</a>
 								</li>
 								<li>
-									<a href="{% url 's-cleaning' %}">Educationals</a>
+									<a href="{% url 's-educationals' %}">Educationals</a>
 								</li>
 							</ul>
 						</div>
@@ -327,22 +325,22 @@
 							<div class="social-icon">
 								<ul>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+										<a href="https://www.facebook.com/sarkaar.settings" target="_blank"><i class="fab fa-facebook-f"></i> </a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+										<a href="https://twitter.com/sarkaarsettings" target="_blank"><i class="fab fa-twitter"></i> </a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+										<a href="https://www.youtube.com/channel/UCAhMWZDHJXaKrqprlv8gdTA" target="_blank"><i class="fab fa-youtube"></i></a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+										<a href="https://www.instagram.com/sarkaarsettings/" target="_blank"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+										<a href="https://www.linkedin.com/company/sarkaarsettings/" target="_blank"><i class="fab fa-linkedin"></i></a>
 									</li>
 									<li>
-										<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+										<a href="https://wa.me/9824341414" target="_blank"><i class="fab fa-whatsapp"></i></a>
 									</li>
 								</ul>
 							</div>
@@ -367,7 +365,7 @@
 					<div class="row">
 						<div class="col-md-6 col-lg-6">
 							<div class="copyright-text">
-								<p class="mb-0">&copy; 2020 <a href="#">Sarkaar</a>. All rights reserved.</p>
+								<p class="mb-0">&copy; 2021 <a href="#">Sarkaar</a>. All rights reserved.</p>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-6">

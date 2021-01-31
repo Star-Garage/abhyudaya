@@ -31,120 +31,133 @@
 
 	<div class="main-wrapper">
 
-		<!-- Header -->
-		<header class="header">
-			<nav class="navbar navbar-expand-lg header-nav">
-				<div class="navbar-header">
-					<a id="mobile_btn" href="javascript:void(0);">
-						<span class="bar-icon">
-							<span></span>
-							<span></span>
-							<span></span>
-						</span>
-					</a>
-					<a href="#" class="navbar-brand logo">
+	<!-- Header -->
+	<header class="header">
+		<nav class="navbar navbar-expand-lg header-nav">
+			<div class="navbar-header">
+				<a id="mobile_btn" href="javascript:void(0);">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</a>
+				<a href= "#"  class="navbar-brand logo">
+					<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
+				</a>
+				<a href= "#"  class="navbar-brand logo-small">
+					<img src="{% static 'users/assets/img/head-logo.png' %}" class="img-fluid" alt="Logo">
+				</a>
+			</div>
+			<div class="main-menu-wrapper">
+				<div class="menu-header">
+					<a href= "#"  class="menu-logo">
 						<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
 					</a>
-					<a href="#" class="navbar-brand logo-small">
-						<img style="height: 30px;" src="{% static 'users/assets/img/head-logo.png' %}" class="img-fluid" alt="Logo">
-					</a>
+					<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
 				</div>
-				<div class="main-menu-wrapper">
-					<div class="menu-header">
-						<a href="#" class="menu-logo">
-							<img src="{% static 'users/assets/img/logo1.png' %}" class="img-fluid" alt="Logo">
-						</a>
-						<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i
-								class="fas fa-times"></i></a>
-					</div>
-					<ul class="main-nav">
-						<li>
-							<a href="#">Home</a>
-						</li>
-						<li class="active">
-							<a href="{% url 'categories' %}">Categories</a>
-						</li>
-						<li class="has-submenu">
-							<a href="{% url 'provider-dashboard' %}">Providers</a>
-							<ul class="submenu">
-								<li><a href="{% url 'provider-dashboard' %}">Dashboard</a></li>
-								<li><a href="{% url 'my-services' %}">Services</a></li>
-								<li><a href="{% url 'provider-bookings' %}">Bookings</a></li>
-								<li><a href="{% url 'provider-settings' %}">Profile Settings</a></li>
-								<li><a href="{% url 'provider-wallet' %}">Wallet</a></li>
-								<li><a href="{% url 'provider-subscription' %}">Subscription</a></li>
-								<li><a href="{% url 'provider-availability' %}">Availability</a></li>
-								<li><a href="{% url 'provider-reviews' %}">Reviews</a></li>
-								<li><a href="{% url 'provider-payment' %}">Payment</a></li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="{% url 'customer-dashboard' %}">Customers</a>
-							<ul class="submenu">
-								<li><a href="{% url 'customer-dashboard' %}">Dashboard</a></li>
-								<li><a href="{% url 'customer-bookings' %}">Bookings</a></li>
-								<li><a href="{% url 'customer-settings' %}">Profile Settings</a></li>
-								<li><a href="{% url 'customer-wallet' %}">Wallet</a></li>
-								<li><a href="{% url 'customer-reviews' %}">Reviews</a></li>
-								<li><a href="{% url 'customer-payment' %}">Payment</a></li>
-							</ul>
-						</li>
-						<li class="has-submenu">
-							<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu">
-								<li><a href="{% url 'search' %}">Search</a></li>
-								<li><a href="#">Service Details</a></li>
-								<li><a href="{% url 'add-service' %}">Add Service</a></li>
-								<li><a href="{% url 'edit-service' %}">Edit Service</a></li>
-								<li><a href="{% url 'chat' %}">Chat</a></li>
-								<li><a href="{% url 'notifications' %}">Notifications</a></li>
-								<li><a href="{% url 'about-us' %}">About Us</a></li>
-								<li><a href="{% url 'contact-us' %}">Contact Us</a></li>
-								<li><a href="{% url 'faq' %}">Faq</a></li>
-								<li><a href="#">Terms & Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="admin/index.html" target="_blank">Admin</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);" data-toggle="modal" data-target="#provider-register">Become a
-								Professional</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);" data-toggle="modal" data-target="#user-register">Become a
-								User</a>
-						</li>
-					</ul>
-				</div>
-				<ul class="nav header-navbar-rht">
-					<li class="nav-item">
-						<a class="nav-link header-login" href="javascript:void(0);" data-toggle="modal"
-							data-target="#login_modal">Login</a>
+				<ul class="main-nav">
+					<li><a href="{% url 'search' %}"><i class="fas fa-street-view"></i> {{context.pid.city}}</a>
+					</li>
+					<li>
+						<a href= "{% url 'index' %}" >Home</a>
+					</li>
+					<li class="active">
+						<a href= "{% url 'categories' %}" >Categories</a>
+					</li>
+					<li><a href= "{% url 'about-us' %}" >About Us</a></li>
+					{% if context.pid %}
+					<li class="has-submenu">
+						<a href= "{% url 'provider-dashboard' %}" >My Dashboard</a>
+						<ul class="submenu">
+							<li><a href= "{% url 'provider-dashboard' %}" >Dashboard</a></li>
+							<li><a href= "{% url 'my-services' %}" >Services</a></li>
+							<li><a href= "{% url 'provider-bookings' %}" >Bookings</a></li>
+							<li><a href= "{% url 'provider-settings' %}" >Profile Settings</a></li>
+							<li><a href= "{% url 'provider-wallet' %}" >Wallet</a></li>
+							<li><a href= "{% url 'provider-subscription' %}" >Subscription</a></li>
+							<li><a href= "{% url 'provider-availability' %}" >Availability</a></li>
+							<li><a href= "{% url 'provider-reviews' %}" >Reviews</a></li>
+							<li><a href= "{% url 'provider-payment' %}" >Payment</a></li>
+						</ul>
+					</li>
+					{% elif context.cid %}
+					<li class="has-submenu">
+						<a href= "{% url 'customer-dashboard' %}" >My Home</a>
+						<ul class="submenu">
+							<li><a href= "{% url 'customer-dashboard' %}" >Dashboard</a></li>
+							<li><a href= "{% url 'customer-bookings' %}" >Bookings</a></li>
+							<li><a href= "{% url 'customer-settings' %}" >Profile Settings</a></li>
+							<li><a href= "{% url 'customer-wallet' %}" >Wallet</a></li>
+							<li><a href= "{% url 'customer-reviews' %}" >Reviews</a></li>
+							<li><a href= "{% url 'customer-payment' %}" >Payment</a></li>
+						</ul>
+					</li>
+					{% endif %}
+					<li class="has-submenu">
+						<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+						<ul class="submenu">
+							<li><a href= "{% url 'splus' %}" >splus</a></li>
+							<li><a href="{% url 'term-condition' %}">Terms & Conditions</a></li>
+							<li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+						</ul>
+					</li>
+					<li><a href= "{% url 'contact-us' %}" >Contact Us</a></li>
+{% if context.uid %}
+					<li class="has-submenu">
+						<a> <b style="color: aqua;"><i class="fas fa-user"></i>  {{context.uid.username}}</b></a>
+						<ul class="submenu">
+							<li><a href="#"><i class="far fa-user-circle"></i> Profile</a></a></li>
+							<li><a href="#"><i class="fab fa-opencart"></i> My Orders</a></a></li>
+							<li><a href="#"><i class="far fa-grin-hearts"></i> My Wishlist</a></a></li>
+							<div class="dropdown-divider"></div>
+							<li><a href="{% url 'log-out' %}"><i class="fas fa-power-off"></i> Log-out</a></a></li>
+						</ul>
 					</li>
 				</ul>
-			</nav>
-		</header>
-		<!-- /Header -->
+			</div>
+			<ul class="nav header-navbar-rht">
+				<li class="nav-item">
+					<a class="nav-link header-login" href="{% url 'log-out' %}">S +</a>
+				</li>
+			</ul>
+{% else %}
+					<li>
+						<a href="javascript:void(0);" data-toggle="modal" data-target="#user-register">Become a User</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="nav header-navbar-rht">
+				<li class="nav-item">
+					<a class="nav-link header-login" href="javascript:void(0);" data-toggle="modal" data-target="#login_modal">Login</a>
+				</li>
+			</ul>
+{% endif %}
+		</nav>
+	</header>
+<!-- /Header -->
+
 	<!-- Ad1 Section -->
-	<section class="call-us container" style="background-color: #e60073;
-	background-image: url('https://www.transparenttextures.com/patterns/dark-brick-wall.png');
-	; border-radius: 0px 60px">
-		<div class="container-fluid" style="margin-top:2px">
+	<section class="call-us container" style="margin-top:100px; background:#e60073;  background-image: url('https://www.transparenttextures.com/patterns/dark-brick-wall.png');
+    border-radius: 0px 60px">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-12 pl-4 pt-2 pr-4">
-					<span style="border: #e60073 solid; background:#faf9f9; padding: 10px; border-radius:5px"><strong style="color: #000000;"> 30 % <i>OFF</i></strong></span>
-					<h2 style="margin-top: 20px;">Want to try our sketch-artist's amazing art? </h2>
-					<p> Get your portrait sketch of any of your picture done with the sarkaar's sketch-artists's skills at the 30 % off</p><br>
+				<div class="col-12 col-md-10 pl-4 pt-2 pr-4 ">
+					<span style="border: #e60073 solid; background:#faf9f9; padding: 10px; border-radius:5px"><strong
+							style="color: #000000;"> 25 % <i>OFF</i></strong></span>
+					<h2 style="margin-top: 20px; text-shadow: 2px 2px 2px #000;">Want to try our Geyser Pro's skillful
+						talent? </h2>
+					<h4 class="pt-2" style="color: #ebe3e7;text-shadow: 2px 2px 2px #000;"> Get your Geyser installed,
+						serviced or repaired with us at just <strong> 25 % off.</strong></h4><br>
 				</div>
-				<div class="col-12 call-us-btn" style="border: #ebe3e7;">
+				<div class="col-12 col-md-2 call-us-btn" style="border: #ebe3e7;">
 					<a href="javascript:void(0);" class="btn btn-call-us">Book Now</a>
 				</div>
 			</div>
 		</div>
-	</section><br>
+	</section>
 	<!-- /Ad1 Section -->
+
 		  <!-- Page Content -->
 		<div class="content">
 			<div class="container">
@@ -957,6 +970,7 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="how-work">
 			<div class="container">
 				<div class="row">
@@ -1003,6 +1017,7 @@
 				</div>
 			</div>
 		</section><br>
+
 		<section style="height: 350px;">
 		<div class="container">
 			<div class="row">
@@ -1034,144 +1049,142 @@
 			</div>
 		  </div>
 		</section>
-		<!-- Footer -->
-		<footer class="footer">
 
-			<!-- Footer Top -->
-			<div class="footer-top">
-				<div class="container">
+	<!-- Footer -->
+	<footer class="footer">
+		<!-- Footer Top -->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<!-- Footer Widget -->
+						<div class="footer-widget footer-menu">
+							<h2 class="footer-title">Quick Links </h2>
+							<ul>
+								<li>
+									<a href="{% url 'splus' %}">Sarkaar +</a>
+								</li>
+								<li>
+									<a href="{% url 'index' %}">Home</a>
+								</li>
+								<li>
+									<a href="{% url 'about-us' %}">About Us</a>
+								</li>
+								<li>
+									<a href="{% url 'contact-us' %}">Contact Us</a>
+								</li>
+							</ul>
+						</div>
+						<!-- /Footer Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<!-- Footer Widget -->
+						<div class="footer-widget footer-menu">
+							<h2 class="footer-title">Categories</h2>
+							<ul>
+								<li>
+									<a href="{% url 's-design' %}">Design</a>
+								</li>
+								<li>
+									<a href="{% url 's-artists' %}">Artists</a>
+								</li>
+								<li>
+									<a href="{% url 's-computers' %}">Development</a>
+								</li>
+								<li>
+									<a href="{% url 's-educationals' %}">Educationals</a>
+								</li>
+							</ul>
+						</div>
+						<!-- /Footer Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<!-- Footer Widget -->
+						<div class="footer-widget footer-contact">
+							<h2 class="footer-title">Contact Us</h2>
+							<div class="footer-contact-info">
+								<div class="footer-address">
+									<span><i class="far fa-building"></i></span>
+									<p>4, Humming Bird, Iscon Road, Vallabh Vidhyanagar, Anand</p>
+								</div>
+								<p><i class="fas fa-phone"></i> +91 9824341414</p>
+								<p class="mb-0"><i class="fas fa-envelope"></i> info@sarkaar.com</p>
+							</div>
+						</div>
+						<!-- /Footer Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<!-- Footer Widget -->
+						<div class="footer-widget">
+							<h2 class="footer-title">Follow Us</h2>
+							<div class="social-icon">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/sarkaar.settings" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+									</li>
+									<li>
+										<a href="https://twitter.com/sarkaarsettings" target="_blank"><i class="fab fa-twitter"></i> </a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/channel/UCAhMWZDHJXaKrqprlv8gdTA" target="_blank"><i class="fab fa-youtube"></i></a>
+									</li>
+									<li>
+										<a href="https://www.instagram.com/sarkaarsettings/" target="_blank"><i class="fab fa-instagram"></i></a>
+									</li>
+									<li>
+										<a href="https://www.linkedin.com/company/sarkaarsettings/" target="_blank"><i class="fab fa-linkedin"></i></a>
+									</li>
+									<li>
+										<a href="https://wa.me/9824341414" target="_blank"><i class="fab fa-whatsapp"></i></a>
+									</li>
+								</ul>
+							</div>
+							<div class="subscribe-form">
+								<input type="email" class="form-control" placeholder="Enter your email">
+								<button type="submit" class="btn footer-btn">
+									<i class="fas fa-paper-plane"></i>
+								</button>
+							</div>
+						</div>
+						<!-- /Footer Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Footer Top -->
+		<!-- Footer Bottom -->
+		<div class="footer-bottom">
+			<div class="container">
+				<!-- Copyright -->
+				<div class="copyright">
 					<div class="row">
-						<div class="col-lg-3 col-md-6">
-							<!-- Footer Widget -->
-							<div class="footer-widget footer-menu">
-								<h2 class="footer-title">Quick Links </h2>
-								<ul>
+						<div class="col-md-6 col-lg-6">
+							<div class="copyright-text">
+								<p class="mb-0">&copy; 2021 <a href="#">Sarkaar</a>. All rights reserved.</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-6">
+							<!-- Copyright Menu -->
+							<div class="copyright-menu">
+								<ul class="policy-menu">
 									<li>
-										<a href="{% url 'about-us' %}">About Us</a>
+										<a href="{% url 'term-condition' %}">Terms and Conditions</a>
 									</li>
 									<li>
-										<a href="{% url 'contact-us' %}">Contact Us</a>
-									</li>
-									<li>
-										<a href="{% url 'faq' %}">Faq</a>
-									</li>
-									<li>
-										<a href="#">Help</a>
+										<a href="{% url 'privacy-policy' %}">Privacy</a>
 									</li>
 								</ul>
 							</div>
-							<!-- /Footer Widget -->
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<!-- Footer Widget -->
-							<div class="footer-widget footer-menu">
-								<h2 class="footer-title">Categories</h2>
-								<ul>
-									<li>
-										<a href="{% url 'search' %}">Computer</a>
-									</li>
-									<li>
-										<a href="{% url 'search' %}">Interior</a>
-									</li>
-									<li>
-										<a href="{% url 'search' %}">Car Wash</a>
-									</li>
-									<li>
-										<a href="{% url 'search' %}">Cleaning</a>
-									</li>
-								</ul>
-							</div>
-							<!-- /Footer Widget -->
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<!-- Footer Widget -->
-							<div class="footer-widget footer-contact">
-								<h2 class="footer-title">Contact Us</h2>
-								<div class="footer-contact-info">
-									<div class="footer-address">
-										<span><i class="far fa-building"></i></span>
-										<p>4, Humming Bird, Iscon Road, Vallabh Vidhyanagar, Anand</p>
-									</div>
-									<p><i class="fas fa-phone"></i> +91 9824341414</p>
-									<p class="mb-0"><i class="fas fa-envelope"></i> info@sarkaar.com</p>
-								</div>
-							</div>
-							<!-- /Footer Widget -->
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<!-- Footer Widget -->
-							<div class="footer-widget">
-								<h2 class="footer-title">Follow Us</h2>
-								<div class="social-icon">
-									<ul>
-										<li>
-											<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-										</li>
-										<li>
-											<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
-										</li>
-										<li>
-											<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-										</li>
-										<li>
-											<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-										</li>
-										<li>
-											<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-										</li>
-										<li>
-											<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-										</li>
-									</ul>
-								</div>
-								<div class="subscribe-form">
-									<input type="email" class="form-control" placeholder="Enter your email">
-									<button type="submit" class="btn footer-btn">
-										<i class="fas fa-paper-plane"></i>
-									</button>
-								</div>
-							</div>
-							<!-- /Footer Widget -->
+							<!-- /Copyright Menu -->
 						</div>
 					</div>
 				</div>
+				<!-- /Copyright -->
 			</div>
-			<!-- /Footer Top -->
-
-			<!-- Footer Bottom -->
-			<div class="footer-bottom">
-				<div class="container">
-					<!-- Copyright -->
-					<div class="copyright">
-						<div class="row">
-							<div class="col-md-6 col-lg-6">
-								<div class="copyright-text">
-									<p class="mb-0">&copy; 2020 <a href="#">Sarkaar</a>. All rights reserved.</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-6">
-								<!-- Copyright Menu -->
-								<div class="copyright-menu">
-									<ul class="policy-menu">
-										<li>
-											<a href="{% url 'term-condition' %}">Terms and Conditions</a>
-										</li>
-										<li>
-											<a href="{% url 'privacy-policy' %}">Privacy</a>
-										</li>
-									</ul>
-								</div>
-								<!-- /Copyright Menu -->
-							</div>
-						</div>
-					</div>
-					<!-- /Copyright -->
-				</div>
-			</div>
-			<!-- /Footer Bottom -->
-
-		</footer>
-		<!-- /Footer -->
+		</div>
+		<!-- /Footer Bottom -->
+	</footer>
+	<!-- /Footer -->
 
 	</div>
 

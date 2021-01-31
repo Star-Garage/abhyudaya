@@ -3277,7 +3277,7 @@ html.menu-opened body {
 }
 .content {
     min-height: 200px;
-    padding: 40px 0;
+    padding: 40px 0 0 0;
 }
 .breadcrumb-bar {
     background-color: #fafafa;

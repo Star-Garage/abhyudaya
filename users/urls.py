@@ -135,7 +135,6 @@ urlpatterns = [
 	path('customer-wallet', views.customer_wallet, name='customer-wallet'),
 # General:
 	path('contact-us', views.contact_us, name='contact-us'),
-	path('faq', views.faq, name='faq'),
 	path('privacy-policy', views.privacy_policy, name='privacy-policy'),
 	path('term-condition', views.term_condition, name='term-condition'),
 	path('search', views.search, name='search'),
@@ -148,5 +147,6 @@ urlpatterns = [
 	path('splus', views.splus, name='splus'),
 # Update:
 	path('update-profile', views.update_profile, name='update-profile'),
+	path('i-inquiry', views.i_inquiry, name='i-inquiry'),
 	path('ex', views.ex, name='ex'),
 ]
